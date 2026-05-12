@@ -21,7 +21,8 @@ public class Main {
             System.out.println("1. Add Contact");
             System.out.println("2. Display Contacts");
             System.out.println("3. Edit Contact");
-            System.out.println("4. Exit");
+            System.out.println("4. Delete Contact");
+            System.out.println("5. Exit");
 
             System.out.print("Enter Choice: ");
 
@@ -91,6 +92,16 @@ public class Main {
                     break;
 
                 case 4:
+
+                    System.out.print("Enter First Name to Delete: ");
+
+                    String deleteName = scanner.nextLine();
+
+                    service.deleteContact(deleteName);
+
+                    break;
+
+                case 5:
 
                     System.out.println("Exiting Application...");
 

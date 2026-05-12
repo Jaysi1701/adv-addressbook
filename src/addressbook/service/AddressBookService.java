@@ -54,5 +54,23 @@ public class AddressBookService {
         }
 
     }
+
+    public void deleteContact(String firstName) {
+
+        boolean removed = contactList.removeIf(contact ->
+                contact.getFirstName()
+                        .equalsIgnoreCase(firstName));
+
+        if (removed) {
+
+            System.out.println("Contact Deleted Successfully");
+        }
+        else {
+
+            System.out.println("Contact Not Found");
+        }
+    }
 }
+
+
 
