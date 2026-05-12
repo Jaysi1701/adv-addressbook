@@ -33,7 +33,9 @@ public class Main {
             System.out.println("8. Sort Contacts");
             System.out.println("9. Save Contacts To File");
             System.out.println("10. Sort Contacts By Name");
-            System.out.println("11. Exit");
+            System.out.println("11. Sort Contacts By City");
+            System.out.println("12. Read Contacts From File");
+            System.out.println("13. Exit");
 
             System.out.print("Enter Choice: ");
 
@@ -61,10 +63,20 @@ public class Main {
 
                     String phone = scanner.nextLine();
 
+                    System.out.print("Enter State: ");
+
+                    String state = scanner.nextLine();
+
+                    System.out.print("Enter Zip: ");
+
+                    String zip = scanner.nextLine();
+
                     Contact contact = new Contact(
                             firstName,
                             lastName,
                             city,
+                            state,
+                            zip,
                             phone
                     );
 
@@ -163,6 +175,18 @@ public class Main {
                     break;
 
                 case 11:
+
+                    service.sortContactsByCity();
+
+                    break;
+
+                case 12:
+
+                    fileService.readContactsFromFile();
+
+                    break;
+
+                case 13:
 
                     System.out.println("Exiting Application...");
 

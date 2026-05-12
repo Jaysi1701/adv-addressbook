@@ -184,6 +184,25 @@ public class AddressBookService {
             System.out.println("----------------");
         }
     }
+
+    public void sortContactsByCity() {
+
+        List<Contact> sortedList = contactList.stream()
+                .sorted((contact1, contact2) ->
+                        contact1.getCity()
+                                .compareToIgnoreCase(
+                                        contact2.getCity()))
+                .collect(Collectors.toList());
+
+        System.out.println("\nSorted Contacts By City\n");
+
+        for (Contact contact : sortedList) {
+
+            System.out.println(contact);
+
+            System.out.println("----------------");
+        }
+    }
 }
 
 

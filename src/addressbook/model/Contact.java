@@ -6,15 +6,21 @@ public class Contact {
     private String lastName;
     private String city;
     private String phone;
+    private String state;
+    private String zip;
 
     public Contact(String firstName,
                    String lastName,
                    String city,
+                   String state,
+                   String zip,
                    String phone) {
 
         this.firstName = firstName;
         this.lastName = lastName;
         this.city = city;
+        this.state = state;
+        this.zip = zip;
         this.phone = phone;
     }
 
@@ -45,5 +51,15 @@ public class Contact {
                 "\nLast Name: " + lastName +
                 "\nCity: " + city +
                 "\nPhone: " + phone;
+    }
+
+    public String getState() {
+
+        return state;
+    }
+
+    public String getZip() {
+
+        return zip;
     }
 }
