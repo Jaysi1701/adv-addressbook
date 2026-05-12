@@ -70,6 +70,29 @@ public class AddressBookService {
             System.out.println("Contact Not Found");
         }
     }
+
+    public void searchByCity(String city) {
+
+        boolean found = false;
+
+        for (Contact contact : contactList) {
+
+            if (contact.getCity()
+                    .equalsIgnoreCase(city)) {
+
+                System.out.println(contact);
+
+                System.out.println("----------------");
+
+                found = true;
+            }
+        }
+
+        if (!found) {
+
+            System.out.println("No Contacts Found");
+        }
+    }
 }
 
 

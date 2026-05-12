@@ -22,7 +22,8 @@ public class Main {
             System.out.println("2. Display Contacts");
             System.out.println("3. Edit Contact");
             System.out.println("4. Delete Contact");
-            System.out.println("5. Exit");
+            System.out.println("5. Search By City");
+            System.out.println("6. Exit");
 
             System.out.print("Enter Choice: ");
 
@@ -102,6 +103,16 @@ public class Main {
                     break;
 
                 case 5:
+
+                    System.out.print("Enter City Name: ");
+
+                    String searchCity = scanner.nextLine();
+
+                    service.searchByCity(searchCity);
+
+                    break;
+
+                case 6:
 
                     System.out.println("Exiting Application...");
 
