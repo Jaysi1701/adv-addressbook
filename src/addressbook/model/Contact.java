@@ -19,7 +19,18 @@ public class Contact {
     }
 
     public String getFirstName() {
+
         return firstName;
+    }
+
+    public void setCity(String city) {
+
+        this.city = city;
+    }
+
+    public void setPhone(String phone) {
+
+        this.phone = phone;
     }
 
     @Override

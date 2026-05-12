@@ -1,5 +1,4 @@
 package addressbook.service;
-
 import addressbook.model.Contact;
 
 import java.util.ArrayList;
@@ -25,4 +24,35 @@ public class AddressBookService {
             System.out.println("----------------");
         }
     }
+
+    public void editContact(String firstName,
+                            String newCity,
+                            String newPhone) {
+
+        boolean found = false;
+
+        for (Contact contact : contactList) {
+
+            if (contact.getFirstName()
+                    .equalsIgnoreCase(firstName)) {
+
+                contact.setCity(newCity);
+
+                contact.setPhone(newPhone);
+
+                System.out.println("Contact Updated Successfully");
+
+                found = true;
+
+                break;
+            }
+        }
+
+        if (!found) {
+
+            System.out.println("Contact Not Found");
+        }
+
+    }
 }
+

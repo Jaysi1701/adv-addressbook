@@ -20,7 +20,8 @@ public class Main {
 
             System.out.println("1. Add Contact");
             System.out.println("2. Display Contacts");
-            System.out.println("3. Exit");
+            System.out.println("3. Edit Contact");
+            System.out.println("4. Exit");
 
             System.out.print("Enter Choice: ");
 
@@ -68,6 +69,28 @@ public class Main {
                     break;
 
                 case 3:
+
+                    System.out.print("Enter First Name to Edit: ");
+
+                    String editName = scanner.nextLine();
+
+                    System.out.print("Enter New City: ");
+
+                    String newCity = scanner.nextLine();
+
+                    System.out.print("Enter New Phone: ");
+
+                    String newPhone = scanner.nextLine();
+
+                    service.editContact(
+                            editName,
+                            newCity,
+                            newPhone
+                    );
+
+                    break;
+
+                case 4:
 
                     System.out.println("Exiting Application...");
 
