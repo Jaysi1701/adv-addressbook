@@ -2,6 +2,7 @@ package addressbook;
 
 import addressbook.model.Contact;
 import addressbook.service.AddressBookService;
+import addressbook.util.FileService;
 
 import java.util.Scanner;
 
@@ -13,6 +14,10 @@ public class Main {
 
         AddressBookService service =
                 new AddressBookService();
+
+        FileService fileService =
+                new FileService();
+
 
         while (true) {
 
@@ -26,7 +31,8 @@ public class Main {
             System.out.println("6. View Persons By City");
             System.out.println("7. Count Contacts By City");
             System.out.println("8. Sort Contacts");
-            System.out.println("9. Exit");
+            System.out.println("9. Save Contacts To File");
+            System.out.println("10. Exit");
 
             System.out.print("Enter Choice: ");
 
@@ -142,6 +148,14 @@ public class Main {
                     break;
 
                 case 9:
+
+                    fileService.writeContactsToFile(
+                            service.getContactList()
+                    );
+
+                    break;
+
+                case 10:
 
                     System.out.println("Exiting Application...");
 

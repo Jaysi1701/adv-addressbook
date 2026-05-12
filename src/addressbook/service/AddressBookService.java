@@ -159,7 +159,14 @@ public class AddressBookService {
 
         System.out.println("Contacts Sorted Successfully");
     }
+
+    public List<Contact> getContactList() {
+
+        return contactList;
+    }
 }
+
+
 
 
 
