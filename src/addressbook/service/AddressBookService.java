@@ -148,6 +148,17 @@ public class AddressBookService {
                         + city + " : " + count
         );
     }
+
+    public void sortContacts() {
+
+        contactList.sort((contact1, contact2) ->
+                contact1.getFirstName()
+                        .compareToIgnoreCase(
+                                contact2.getFirstName()
+                        ));
+
+        System.out.println("Contacts Sorted Successfully");
+    }
 }
 
 

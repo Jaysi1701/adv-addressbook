@@ -25,7 +25,8 @@ public class Main {
             System.out.println("5. Search By City");
             System.out.println("6. View Persons By City");
             System.out.println("7. Count Contacts By City");
-            System.out.println("8. Exit");
+            System.out.println("8. Sort Contacts");
+            System.out.println("9. Exit");
 
             System.out.print("Enter Choice: ");
 
@@ -135,6 +136,12 @@ public class Main {
                     break;
 
                 case 8:
+
+                    service.sortContacts();
+
+                    break;
+
+                case 9:
 
                     System.out.println("Exiting Application...");
 
