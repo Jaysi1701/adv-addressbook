@@ -10,6 +10,17 @@ public class AddressBookService {
 
     public void addContact(Contact contact) {
 
+        for (Contact existingContact : contactList) {
+
+            if (existingContact.getFirstName()
+                    .equalsIgnoreCase(contact.getFirstName())) {
+
+                System.out.println("Duplicate Contact Found");
+
+                return;
+            }
+        }
+
         contactList.add(contact);
 
         System.out.println("Contact Added Successfully");
