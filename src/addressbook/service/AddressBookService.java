@@ -129,6 +129,25 @@ public class AddressBookService {
             System.out.println("No Persons Found");
         }
     }
+
+    public void countContactsByCity(String city) {
+
+        int count = 0;
+
+        for (Contact contact : contactList) {
+
+            if (contact.getCity()
+                    .equalsIgnoreCase(city)) {
+
+                count++;
+            }
+        }
+
+        System.out.println(
+                "Number of Contacts in "
+                        + city + " : " + count
+        );
+    }
 }
 
 

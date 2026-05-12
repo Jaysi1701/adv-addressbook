@@ -24,7 +24,8 @@ public class Main {
             System.out.println("4. Delete Contact");
             System.out.println("5. Search By City");
             System.out.println("6. View Persons By City");
-            System.out.println("7. Exit");
+            System.out.println("7. Count Contacts By City");
+            System.out.println("8. Exit");
 
             System.out.print("Enter Choice: ");
 
@@ -124,6 +125,16 @@ public class Main {
                     break;
 
                 case 7:
+
+                    System.out.print("Enter City Name: ");
+
+                    String countCity = scanner.nextLine();
+
+                    service.countContactsByCity(countCity);
+
+                    break;
+
+                case 8:
 
                     System.out.println("Exiting Application...");
 
