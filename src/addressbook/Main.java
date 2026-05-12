@@ -32,7 +32,8 @@ public class Main {
             System.out.println("7. Count Contacts By City");
             System.out.println("8. Sort Contacts");
             System.out.println("9. Save Contacts To File");
-            System.out.println("10. Exit");
+            System.out.println("10. Sort Contacts By Name");
+            System.out.println("11. Exit");
 
             System.out.print("Enter Choice: ");
 
@@ -156,6 +157,12 @@ public class Main {
                     break;
 
                 case 10:
+
+                    service.sortContactsByName();
+
+                    break;
+
+                case 11:
 
                     System.out.println("Exiting Application...");
 

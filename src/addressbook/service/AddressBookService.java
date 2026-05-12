@@ -1,5 +1,6 @@
 package addressbook.service;
 import addressbook.model.Contact;
+import java.util.stream.Collectors;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -163,6 +164,25 @@ public class AddressBookService {
     public List<Contact> getContactList() {
 
         return contactList;
+    }
+
+    public void sortContactsByName() {
+
+        List<Contact> sortedList = contactList.stream()
+                .sorted((contact1, contact2) ->
+                        contact1.getFirstName()
+                                .compareToIgnoreCase(
+                                        contact2.getFirstName()))
+                .collect(Collectors.toList());
+
+        System.out.println("\nSorted Contacts By Name\n");
+
+        for (Contact contact : sortedList) {
+
+            System.out.println(contact);
+
+            System.out.println("----------------");
+        }
     }
 }
 
