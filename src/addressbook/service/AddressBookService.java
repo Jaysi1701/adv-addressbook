@@ -93,6 +93,31 @@ public class AddressBookService {
             System.out.println("No Contacts Found");
         }
     }
+
+    public void viewPersonsByCity(String city) {
+
+        boolean found = false;
+
+        System.out.println("\nPersons in City: " + city);
+
+        for (Contact contact : contactList) {
+
+            if (contact.getCity()
+                    .equalsIgnoreCase(city)) {
+
+                System.out.println(
+                        contact.getFirstName()
+                );
+
+                found = true;
+            }
+        }
+
+        if (!found) {
+
+            System.out.println("No Persons Found");
+        }
+    }
 }
 
 
