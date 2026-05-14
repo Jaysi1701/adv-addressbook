@@ -3,7 +3,7 @@ package addressbook;
 import addressbook.model.Contact;
 import addressbook.service.AddressBookService;
 import addressbook.util.FileService;
-
+import addressbook.util.CSVService;
 import java.util.Scanner;
 
 public class Main {
@@ -17,6 +17,9 @@ public class Main {
 
         FileService fileService =
                 new FileService();
+
+        CSVService csvService =
+                new CSVService();
 
 
         while (true) {
@@ -35,7 +38,9 @@ public class Main {
             System.out.println("10. Sort Contacts By Name");
             System.out.println("11. Sort Contacts By City");
             System.out.println("12. Read Contacts From File");
-            System.out.println("13. Exit");
+            System.out.println("13. Write Contacts To CSV");
+            System.out.println("14. Read Contacts From CSV");
+            System.out.println("15. Exit");
 
             System.out.print("Enter Choice: ");
 
@@ -187,6 +192,20 @@ public class Main {
                     break;
 
                 case 13:
+
+                    csvService.writeContactsToCSV(
+                            service.getContactList()
+                    );
+
+                    break;
+
+                case 14:
+
+                    csvService.readContactsFromCSV();
+
+                    break;
+
+                case 15:
 
                     System.out.println("Exiting Application...");
 

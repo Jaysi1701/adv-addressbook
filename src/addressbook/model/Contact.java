@@ -62,4 +62,15 @@ public class Contact {
 
         return zip;
     }
+
+    public String getLastName() {
+
+        return lastName;
+    }
+
+    public String getPhone() {
+
+        return phone;
+    }
+
 }
