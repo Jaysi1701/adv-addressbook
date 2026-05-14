@@ -1,5 +1,6 @@
 package addressbook;
 
+import addressbook.util.JSONService;
 import addressbook.model.Contact;
 import addressbook.service.AddressBookService;
 import addressbook.util.FileService;
@@ -21,6 +22,9 @@ public class Main {
         CSVService csvService =
                 new CSVService();
 
+        JSONService jsonService =
+                new JSONService();
+
 
         while (true) {
 
@@ -40,7 +44,9 @@ public class Main {
             System.out.println("12. Read Contacts From File");
             System.out.println("13. Write Contacts To CSV");
             System.out.println("14. Read Contacts From CSV");
-            System.out.println("15. Exit");
+            System.out.println("15. Write Contacts To JSON");
+            System.out.println("16. Read Contacts From JSON");
+            System.out.println("17. Exit");
 
             System.out.print("Enter Choice: ");
 
@@ -206,6 +212,20 @@ public class Main {
                     break;
 
                 case 15:
+
+                    jsonService.writeContactsToJSON(
+                            service.getContactList()
+                    );
+
+                    break;
+
+                case 16:
+
+                    jsonService.readContactsFromJSON();
+
+                    break;
+
+                case 17:
 
                     System.out.println("Exiting Application...");
 
